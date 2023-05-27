@@ -105,6 +105,18 @@
     line-height: 1.3;
 }
 
+.bg-contrast {
+    background-color: var(--contrast);
+    padding: var(--size-150) 0;
+
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--size-20);
+}
+
 .service-card {
     padding: var(--size-30);
     box-shadow: 0 0 10px rgba(48, 63, 100, .15);
