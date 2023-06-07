@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar nav">
+    <nav id="topNav" class="navbar nav sticky">
         <div class="container">
             <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarDropdown">
                 <span>&#9776;</span>
@@ -26,7 +26,7 @@
                     <a href="#">Home</a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">Blog</a>
+                    <a href="#">Blog</a> 
                 </li>
                 <li class="nav-link">
                     <a href="#">Portfolio</a>
@@ -145,9 +145,9 @@
     <!-- pricing table -->
     <section class="bg-contrast">
         <div class="block-text pricing-header">
-            <h2>Telling our Story</h2>
-            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. <br> Contrary to popular belief, Lorem
-                Ipsum is not simply random text.</p>
+            <h2>Choose the right package for you!</h2>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. <br> Contrary to popular belief.</p>
+
         </div>
         <div class="pricing-table">
             <div class="price-card">
@@ -205,11 +205,10 @@
                         <span class="title">Speedy Build Tooling</span>
                         <span class="icon times">&#10761;</span>
                     </li>
-                    <div class="plan-btn-wrapper">
-                        <a href="" class="btn btn-primary">Learn More</a>
-                    </div>
                 </ul>
-
+                <div class="plan-btn-wrapper">
+                    <a href="" class="btn btn-primary">Get Started</a>
+                </div>
             </div>
 
             <div class="price-card">
@@ -281,9 +280,6 @@
                         Lorem.</p>
                 </div>
             </div>
-
-
-
             <div class="testimonial-card md">
                 <div class="top">
                     <img src="/assets/3.png" alt="moreno profile pic" class="img-profile">
@@ -321,18 +317,15 @@
                     <h5>Services</h5>
                     <div class="services-wrapper">
                         <h5>Mobile Apps</h5>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. Contrary to popular belief
-                        </p>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
                     </div>
                     <div class="services-wrapper">
                         <h5>Brand Identity</h5>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. Contrary to popular belief
-                        </p>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
                     </div>
                     <div class="services-wrapper">
                         <h5>Social Media</h5>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. Contrary to popular belief
-                        </p>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -383,8 +376,30 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> 
     </footer>
+
+
+    <script>
+        const nav = document.getElementById("topNav");
+        window.onscroll = function () {
+            if (window.pageYOffset > 100) {
+                nav.classList.add("sticky");
+            } else {
+                nav.classList.remove("sticky");
+            }
+        }
+
+        const navButton = document.querySelector('button[aria-expanded]');
+        
+        function toggleNav({ target }) {
+            const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+            navButton.setAttribute('aria-expanded', !expanded);
+        }
+
+        navButton.addEventListener('click', toggleNav);
+    </script>
+
 
 </body>
 

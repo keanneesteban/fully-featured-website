@@ -8,6 +8,32 @@
     padding: 1rem;
 }
 
+.navbar.sticky {
+    background: var(--white);
+    box-shadow: 0px 0px 20px rgba(48, 63, 100, .2);
+}
+
+.navbar.sticky, .navbar-toggler span,
+.navbar.sticky, .navbar-brand {
+    color: var(--font-color-dark) !important;
+}
+
+.navbar-toggler {
+    position: absolute;
+    right: var(--size-20);
+    top: var(--size-10);
+    outline: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.navbar-toggler span {
+    color: var(--white);
+    font-size: var(--size-20);
+    cursor: pointer;
+    pointer-events: none;
+}
+
 [aria-controls="navbarDropdown"] {
     display: none;
 }
@@ -56,6 +82,7 @@
 
 .bg-header {
     background-image: url("../assets/bg-header-1.jpg");
+    padding: var(--size-150) 0;
 }
 
 .video-demo {
@@ -96,15 +123,25 @@
     flex: 1;
 }
 
-.block-text {
-    padding-right: var(--size-50);
-    color: #212529 !important;
+.why-me-wrapper .block-text {
+    padding-right: var(--size-150);
 }
+
+.block-text { 
+    color: #212529 !important;
+    max-width: 35rem;
+    margin: auto;
+ }
+
+ .video-demo .block-text {
+    color: white;
+ }
 
 .block-text span {
     color: var(--font-color-dark);
     font-weight: 300;
 }
+
 
 .block-text h2 {
     font-size: var(--size-40);
@@ -215,10 +252,14 @@ span.bg-color-6 {
 
 .block-text.pricing-header {
     text-align: center;
-    padding-right: 0;
+    padding-right: var(--size-10);
     color: var(--font-color-dark);
-    margin: var(--size-100) 0;
 }
+
+.block-text.pricing-header p {
+    margin-bottom: var(--size-50);
+}
+
 
 .pricing-table {
     display: grid;
@@ -232,7 +273,7 @@ span.bg-color-6 {
 .price-card {
     background-color: var(--white);
     border-radius: 8px;
-    padding: var(--size-16);
+    padding: var(--size-40) var(--size-16);
 }
 
 .price-card .checked {
@@ -285,12 +326,13 @@ span.bg-color-6 {
     text-align: center;
 }
 
+.btn.btn-primary { width: 100%; }
+
 .testimonials { margin: var(--size-100) 0; }
 
 .testimonials .block-text {
     padding-right: 0;
     text-align: center;
-    margin: var(--size-100) 0;
 }
 
 .testimonial-grid {
@@ -359,10 +401,13 @@ footer .footer-top {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--size-50);
-    padding: var(--size-100) 0;
+    padding: var(--size-50) 0;
 }
 
-footer .footer-col { justify-self: center; }
+footer .footer-col { 
+    justify-self: center;
+    max-width: 15.625rem;
+}
 
 .footer-top h5 {
     color: var(--white);
